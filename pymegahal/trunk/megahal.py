@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-#
 # Copyright (c) 2010, Chris Jones
 # All rights reserved.
 #
@@ -469,27 +467,3 @@ class MegaHAL(object):
     def close(self):
         """Close database"""
         self.__brain.close()
-
-
-def main(argv=None):
-    from optparse import OptionParser
-
-    optparse = OptionParser(version=__version__, description=__doc__)
-    optparse.add_option('-b', '--brain', dest='brainfile', metavar='<file>', default=DEFAULT_BRAINFILE,
-                        help='location of brain (default: %default)')
-    optparse.add_option('-o', '--order', metavar='<int>', default=DEFAULT_ORDER, type='int',
-                        help='order of markov chain (default: %default)')
-    optparse.add_option('-t', '--timeout', metavar='<float>', default=DEFAULT_TIMEOUT, type='float',
-                        help='how long to look for replies (default: %default)')
-    optparse.add_option('-T', '--train', metavar='<file>', help='train brain with file')
-    opts, args = optparse.parse_args(argv)
-
-    megahal = MegaHAL(brainfile=opts.brainfile, order=opts.order, timeout=opts.timeout)
-    if opts.train:
-        megahal.train(opts.train)
-    megahal.interact()
-    return 0
-
-if __name__ == '__main__':
-    import sys
-    sys.exit(main())
