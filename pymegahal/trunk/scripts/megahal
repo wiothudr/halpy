@@ -6,7 +6,6 @@ import sys
 from megahal import *
 
 def main(argv=None):
-
     optparse = OptionParser(version=__version__, description=__doc__)
     optparse.add_option('-b', '--brain', dest='brainfile', metavar='<file>', default=DEFAULT_BRAINFILE,
                         help='location of brain (default: %default)')

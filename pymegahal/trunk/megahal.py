@@ -35,7 +35,7 @@ import os
 __version__ = '0.1'
 __author__ = 'Chris Jones <cjones@gruntle.org>'
 __license__ = 'BSD'
-__all__ = ['MegaHAL', 'Dictionary', 'Tree']
+__all__ = ['MegaHAL', 'Dictionary', 'Tree', '__version__', 'DEFAULT_ORDER', 'DEFAULT_BRAINFILE', 'DEFAULT_TIMEOUT']
 
 DEFAULT_ORDER = 5
 DEFAULT_BRAINFILE = os.path.join(os.environ.get('HOME', ''), '.pymegahal-brain')
