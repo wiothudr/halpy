@@ -283,7 +283,6 @@ class Brain(object):
         dummy_reply = self.generate_replywords()
         if not dummy_reply or words == dummy_reply:
             output = self.get_words_from_phrase("I don't know enough to answer yet!")
-            print output
         else:
             output = dummy_reply
 
