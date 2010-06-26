@@ -32,7 +32,7 @@ import random
 import math
 import os
 
-__version__ = '0.1'
+__version__ = '0.2'
 __author__ = 'Chris Jones <cjones@gruntle.org>'
 __license__ = 'BSD'
 __all__ = ['MegaHAL', 'Dictionary', 'Tree', '__version__', 'DEFAULT_ORDER', 'DEFAULT_BRAINFILE', 'DEFAULT_TIMEOUT']
@@ -326,7 +326,7 @@ class Brain(object):
             if state['num'] >= 8:
                 state['entropy'] /= math.sqrt(state['num'] - 1)
             if state['num'] >= 16:
-                state['entropy'] /= num
+                state['entropy'] /= state['num']
         return state['entropy']
 
     def generate_replywords(self, keys=None):
